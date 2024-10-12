@@ -24,11 +24,6 @@
     font-size: 1.2em;
     color: #495057;
   }
-
-  .no-topo{
-    text-align: center;
-    margin-bottom: 2rem;
-  }
   
   main {
     padding: 20px;
@@ -49,6 +44,11 @@
     margin: 15px;
     width: 250px;
     text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
   }
   
   .card h3 {
@@ -81,15 +81,112 @@
   }
   
   footer {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    height: 10vw;
     background-color: #343a40;
     color: #ffffff;
     text-align: center;
     padding: 10px;
     margin-top: 20px;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 1200px) {
+    .menu {
+      justify-content: space-between;
+    }
+    
+    .card {
+      width: 220px;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    header h1 {
+      font-size: 2.2em;
+    }
+  
+    header p {
+      font-size: 1.1em;
+    }
+  
+    .card {
+      width: 200px;
+    }
+  
+    button {
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .menu {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 90%;
+      margin: 10px 0;
+    }
+  
+    header h1 {
+      font-size: 2em;
+    }
+  
+    header p {
+      font-size: 1em;
+    }
+  
+    button {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    header h1 {
+      font-size: 1.8em;
+    }
+  
+    header p {
+      font-size: 0.9em;
+    }
+  
+    .card {
+      width: 100%;
+    }
+  
+    button {
+      font-size: 1em;
+    }
+  }
+  
+  /* Estilo para Smart TV (telas muito grandes) */
+  @media (min-width: 1800px) {
+    body {
+      font-size: 1.2em;
+    }
+  
+    header h1 {
+      font-size: 3.5em;
+    }
+  
+    header p {
+      font-size: 1.5em;
+    }
+  
+    .card {
+      width: 350px;
+      padding: 30px;
+    }
+  
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+    }
+  
+    select {
+      padding: 10px;
+      font-size: 1.2em;
+    }
   }
   

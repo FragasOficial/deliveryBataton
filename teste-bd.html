@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazendo meu pedido</title>
+</head>
+<body>
+    <form id="pedidoForm">
+        <input type="text" id="nome_cliente" placeholder="Seu nome" required>
+        <input type="text" id="telefone_cliente" placeholder="Seu telefone" required>
+        <input type="text" id="endereco_cliente" placeholder="Seu endereço" required>
+        <input type="hidden" id="produto_id" value="1"> <!-- ID do produto -->
+        <input type="hidden" id="refrigerante_id" value="5"> <!-- ID do refrigerante -->
+        <button type="submit">Finalizar Pedido</button>
+      </form>
+      
+      <script>
+        document.getElementById('pedidoForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+      
+          const pedido = {
+            nome_cliente: document.getElementById('nome_cliente').value,
+            telefone_cliente: document.getElementById('telefone_cliente').value,
+            endereco_cliente: document.getElementById('endereco_cliente').value,
+            produto_id: document.getElementById('produto_id').value,
+            refrigerante_id: document.getElementById('refrigerante_id').value,
+            quantidade: 1,
+            total: 22.00 // Substituir com o cálculo real
+          };
+      
+          fetch('/pedidos', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(pedido),
+          })
+          .then(response => response.text())
+          .then(data => {
+            alert(data);
+          })
+          .catch(error => {
+            console.error('Erro ao enviar pedido:', error);
+          });
+        });
+      </script>
+      
+</body>
+</html>
