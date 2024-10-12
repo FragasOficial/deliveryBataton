@@ -1,70 +1,85 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bataton - Deliciosas Batatas Fritas</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bataton - Página de Vendas</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
-        <h1>Bem-vindo ao Bataton!</h1>
-        <p>As melhores batatas fritas entregues na sua casa!</p>
-    </header>
+  <header>
+    <h1>Bem-vindo à Bataton</h1>
+    <p>As melhores batatas fritas entregues na sua casa!</p>
+  </header>
 
+  <main>
+    <h2 class="no-topo">Nossas Batatas Fritas</h2>
     <section class="menu">
-        <div class="card">
-            <h2>Batata Frita Tradicional</h2>
-            <p>Crocante e saborosa!</p>
-            <button onclick="addToCart('Batata Frita Tradicional')">Adicionar ao Carrinho</button>
-        </div>
+      
+      <div class="card">
+        <h3>Batata Frita Tradicional</h3>
+        <p>Crocante e deliciosa!</p>
+        <button onclick="addToCart('Batata Frita Tradicional')">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="card">
+        <h3>Batata Frita com Bacon</h3>
+        <p>Com bacon crocante por cima!</p>
+        <button onclick="addToCart('Batata Frita com Bacon')">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="card">
+        <h3>Batata Frita com Calabresa</h3>
+        <p>Acompanha calabresa especial.</p>
+        <button onclick="addToCart('Batata Frita com Calabresa')">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="card">
+        <h3>Combo Tradicional + Refrigerante</h3>
+        <p>Batata tradicional com o refrigerante da sua escolha.</p>
+        <label for="size1">Tamanho do refrigerante:</label>
+        <select id="size1">
+          <option value="600ml">600ml</option>
+          <option value="1L">1L</option>
+          <option value="2L">2L</option>
+        </select>
+
+        <label for="brand1">Marca do refrigerante:</label>
+        <select id="brand1">
+          <option value="Coca-Cola">Coca-Cola</option>
+          <option value="Delrio">Delrio</option>
+          <option value="Guaraná Antartica">Guaraná Antartica</option>
+        </select>
         
-        <div class="card">
-            <h2>Batata Frita com Bacon</h2>
-            <p>Batata frita com pedacinhos de bacon.</p>
-            <button onclick="addToCart('Batata Frita com Bacon')">Adicionar ao Carrinho</button>
-        </div>
+        <button onclick="addToCart('Combo Tradicional + Refrigerante')">Adicionar ao Carrinho</button>
+      </div>
 
-        <div class="card">
-            <h2>Batata Frita com Calabresa</h2>
-            <p>Batata frita com calabresa bem temperada.</p>
-            <button onclick="addToCart('Batata Frita com Calabresa')">Adicionar ao Carrinho</button>
-        </div>
+      <div class="card">
+        <h3>Combo Bacon + Refrigerante</h3>
+        <p>Batata com bacon e o refrigerante da sua escolha.</p>
+        <label for="size2">Tamanho do refrigerante:</label>
+        <select id="size2">
+          <option value="600ml">600ml</option>
+          <option value="1L">1L</option>
+          <option value="2L">2L</option>
+        </select>
 
-        <div class="card">
-            <h2>Combo Tradicional + Refrigerante</h2>
-            <p>Batata frita tradicional com refrigerante à sua escolha.</p>
-            <button onclick="openDrinkOptions('Combo Tradicional + Refrigerante')">Adicionar ao Carrinho</button>
-        </div>
+        <label for="brand2">Marca do refrigerante:</label>
+        <select id="brand2">
+          <option value="Coca-Cola">Coca-Cola</option>
+          <option value="Delrio">Delrio</option>
+          <option value="Guaraná Antartica">Guaraná Antartica</option>
+        </select>
 
-        <div class="card">
-            <h2>Combo Bacon + Refrigerante</h2>
-            <p>Batata frita com bacon e refrigerante à sua escolha.</p>
-            <button onclick="openDrinkOptions('Combo Bacon + Refrigerante')">Adicionar ao Carrinho</button>
-        </div>
+        <button onclick="addToCart('Combo Bacon + Refrigerante')">Adicionar ao Carrinho</button>
+      </div>
     </section>
+  </main>
 
-    <section id="drink-options" class="hidden">
-        <h2>Selecione o Tamanho e Marca do Refrigerante</h2>
-        <form id="drinkForm">
-            <label for="size">Tamanho do Refrigerante:</label>
-            <select id="size" name="size">
-                <option value="600ml">600ml</option>
-                <option value="1l">1 litro</option>
-                <option value="2l">2 litros</option>
-            </select>
+  <footer>
+    <p>© 2024 Bataton - As melhores batatas fritas da cidade!</p>
+  </footer>
 
-            <label for="brand">Marca do Refrigerante:</label>
-            <input type="text" id="brand" name="brand" placeholder="Digite a marca do refrigerante">
-
-            <button type="button" onclick="addToCartWithDrink()">Confirmar</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>© 2024 Bataton - Batatas Fritas Online</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
